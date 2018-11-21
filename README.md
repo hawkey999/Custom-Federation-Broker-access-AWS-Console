@@ -1,4 +1,4 @@
-# Custom-Federation-Broker-access-AWS-Console
+# Custom-Federation-Broker-access-AWS-Console for China region
 
 Python 3.6, Authored by James Huang
 
@@ -20,3 +20,7 @@ aws configure
 或者配置~/.aws下的config和credentials文件
 
 assume的role不要是Role里面那个默认的Admin，要Admin也自己建一个，因为信任实体不同
+
+## 创建Role示例
+aws iam create-role --role-name stsassume --assume-role-policy-document file://trust-policy.json
+aws iam put-role-policy --role-name stsassume --policy-name stsassume --policy-document file://role-policy.json
