@@ -16,11 +16,11 @@ https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_providers_enable
 
 ## 注意：
 运行本代码的本机需要配置有credential和默认region，可以通过AWS CLI配置：
-aws configure
+    aws configure
 或者配置~/.aws下的config和credentials文件
 
 assume的role不要是Role里面那个默认的Admin，要Admin也自己建一个，因为信任实体不同
 
 ## 创建Role示例
-aws iam create-role --role-name stsassume --assume-role-policy-document file://trust-policy.json
-aws iam put-role-policy --role-name stsassume --policy-name stsassume --policy-document file://role-policy.json
+    aws iam create-role --role-name stsassume --assume-role-policy-document file://trust-policy.json
+    aws iam put-role-policy --role-name stsassume --policy-name stsassume --policy-document file://role-policy.json
